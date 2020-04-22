@@ -26,11 +26,6 @@
   font-style: normal;
 }
 
-html {
-  min-width: 100%;
-  min-height: 100%;
-}
-
 html,
 body {
   height: 100%;
@@ -56,11 +51,15 @@ h1 {
     color: #fff;
 }
 
+.main .swiper-container {
+  height: 100%;
+}
+
 .project {
   position: relative;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  height: 100vh;
+  height: 100%;
 }
 
 .project__img {
