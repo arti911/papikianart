@@ -7,11 +7,10 @@ new Vue({
     });
   },
   mounted () {
-    this.heightWindow()
-
-    window.addEventListener('resize', function () {
+    this.$nextTick(function() {
+      window.addEventListener('resize', this.heightWindow)
       this.heightWindow()
-    });
+    })
   },
   data: {
     msg: 'Hello World',
@@ -34,8 +33,8 @@ new Vue({
   },
   methods: {
     heightWindow () {
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty('--vh', `${vh}px`);
+      let vh = window.innerHeight * 0.01
+      document.documentElement.style.setProperty('--vh', `${vh}px`)
     }
   },
 })
