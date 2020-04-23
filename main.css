@@ -43,7 +43,12 @@ h1 {
   font-size: 3.75rem; }
 
 .main {
-  /* height: 100vh; */
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.main .swiper-container {
+  height: inherit;
 }
 
 .main h1 {
@@ -51,15 +56,11 @@ h1 {
     color: #fff;
 }
 
-.main .swiper-container {
-  /* height: 100%; */
-}
-
 .project {
   position: relative;
+  height: inherit;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  height: 100vh;
 }
 
 .project__img {

@@ -6,6 +6,13 @@ new Vue({
       grabCursor: true
     });
   },
+  mounted () {
+    this.heightWindow()
+
+    window.addEventListener('resize', function () {
+      this.heightWindow()
+    });
+  },
   data: {
     msg: 'Hello World',
     projects: [
@@ -24,5 +31,11 @@ new Vue({
         linkGithub: 'https://github.com/arti911/amazing'
       }
     ]
-  }
+  },
+  methods: {
+    heightWindow () {
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    }
+  },
 })
