@@ -1,16 +1,15 @@
 new Vue({
   el: '#app',
   mounted () {
-    new Swiper('.swiper-container', {
-      effect: 'fade',
-      grabCursor: true
-    });
-  },
-  mounted () {
     this.$nextTick(function() {
       window.addEventListener('resize', this.heightWindow)
       this.heightWindow()
-    })
+    
+      new Swiper('.swiper-container', {
+        effect: 'fade',
+        grabCursor: true
+      });
+    })    
   },
   data: {
     msg: 'Hello World',
